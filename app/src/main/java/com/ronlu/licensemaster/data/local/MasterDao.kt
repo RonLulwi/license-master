@@ -11,15 +11,33 @@ import com.ronlu.licensemaster.domain.model.Items
 @Dao
 interface MasterDao {
 
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    suspend fun upsert(item: Items) : Long
+//
+//    @Query("SELECT * FROM cars")
+//    fun getCarItems() : LiveData<List<Items.Car>>
+//
+//    @Query("SELECT * FROM motorcycles")
+//    fun getMotorcycleItems() : LiveData<List<Items.Motorcycle>>
+//
+//    @Delete
+//    suspend fun deleteItem(item: Items)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(item: Items) : Long
+    suspend fun upsertCar(car: Items.Car): Long
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsertMotorcycle(motorcycle: Items.Motorcycle): Long
 
     @Query("SELECT * FROM cars")
-    fun getCarItems() : LiveData<List<Items.Car>>
+    fun getCarItems(): LiveData<List<Items.Car>>
 
     @Query("SELECT * FROM motorcycles")
-    fun getMotorcycleItems() : LiveData<List<Items.Motorcycle>>
+    fun getMotorcycleItems(): LiveData<List<Items.Motorcycle>>
 
     @Delete
-    suspend fun deleteItem(item: Items)
+    suspend fun deleteCar(car: Items.Car)
+
+    @Delete
+    suspend fun deleteMotorcycle(motorcycle: Items.Motorcycle)
 }

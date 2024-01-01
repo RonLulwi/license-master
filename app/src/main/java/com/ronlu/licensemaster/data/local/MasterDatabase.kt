@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.ronlu.licensemaster.domain.model.Items
 
 @Database(
-    entities = [Items.Car::class], [Items.Motorcycle::class],
+    entities = [Items.Car::class, Items.Motorcycle::class],
     version = 1
 )
 abstract class MasterDatabase : RoomDatabase(){

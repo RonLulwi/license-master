@@ -17,12 +17,17 @@ class MasterRepository(
     suspend fun getMotorcycleData(filter: String) = RetrofitInstance.api.getMotorcycleData(API_MOTORCYCLE_KEY, filter)
 
     //Room - (Local)
-    suspend fun upsert(item: Items) = database.getMasterDao().upsert(item)
+    suspend fun upsertCar(item: Items.Car) = database.getMasterDao().upsertCar(item)
+    suspend fun upsertMotorcycle(item: Items.Motorcycle) = database.getMasterDao().upsertMotorcycle(item)
 
     fun getCarItems() = database.getMasterDao().getCarItems()
 
     fun getMotorcycleItems() = database.getMasterDao().getMotorcycleItems()
 
-    suspend fun deleteItem(item: Items) = database.getMasterDao().deleteItem(item)
+    suspend fun deleteItem(item: Items) =
+        when(item){
+            is Items.Car -> database.getMasterDao().deleteCar(item)
+            is Items.Motorcycle -> database.getMasterDao().deleteMotorcycle(item)
+        }
 
 }

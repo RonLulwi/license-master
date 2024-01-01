@@ -1,5 +1,6 @@
 package com.ronlu.licensemaster.domain.model
 
+import androidx.room.DatabaseView
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -20,7 +21,7 @@ sealed class Items {
     ) : Items()
 
     @Entity(tableName = "motorcycles")
-    open class Motorcycle(
+    data class Motorcycle(
         @PrimaryKey(autoGenerate = false)
         val plateNumber: Int,
         val color: String,
