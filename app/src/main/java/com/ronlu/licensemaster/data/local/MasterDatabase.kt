@@ -1,13 +1,16 @@
 package com.ronlu.licensemaster.data.local
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.ronlu.licensemaster.domain.model.Items
 
 @Database(
-    entities = [Items.Car::class, Items.Motorcycle::class],
+    entities = [Items.Car::class, Items.Motorcycle::class, Items.PublicVehicle::class],
     version = 1
 )
 abstract class MasterDatabase : RoomDatabase(){
@@ -25,10 +28,7 @@ abstract class MasterDatabase : RoomDatabase(){
             Room.databaseBuilder(
                 context.applicationContext,
                 MasterDatabase::class.java,
-                "cars_db.db"
+                "master_db.db"
             ).build()
     }
-
-
-
 }

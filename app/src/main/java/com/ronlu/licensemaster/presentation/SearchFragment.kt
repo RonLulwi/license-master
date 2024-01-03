@@ -37,8 +37,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         })
 
 
-        masterAdapter.itemClickListener = {v, item, position ->
-            Log.d("dada", "gggggggggggggggggggggggggggg\n\n\n")
+        masterAdapter.itemClickListener = {v, item, _ ->
             Snackbar.make(v, "Item has been saved", Snackbar.LENGTH_SHORT).show()
             viewModel.saveItem(item)
         }
@@ -46,6 +45,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         val fragmentSearch_BTN_search = view.findViewById<AppCompatButton>(R.id.fragmentSearch_BTN_search)
         val search_RBT_motorcycle = view.findViewById<AppCompatRadioButton>(R.id.search_RBT_motorcycle)
         val search_RBT_car = view.findViewById<AppCompatRadioButton>(R.id.search_RBT_car)
+        val search_RBT_public = view.findViewById<AppCompatRadioButton>(R.id.search_RBT_public)
         val fragmentSearch_EDT_search = view.findViewById<AppCompatEditText>(R.id.fragmentSearch_EDT_search)
 
 
@@ -58,10 +58,8 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             else
                 when{
                     search_RBT_motorcycle.isChecked -> viewModel.getMotorcycleData(userInput)
-                    search_RBT_car.isChecked -> {
-                        viewModel.getCarData(userInput)
-                        Snackbar.make(view, "SSS", Snackbar.LENGTH_SHORT).show()
-                    }
+                    search_RBT_car.isChecked -> { viewModel.getCarData(userInput) }
+                    search_RBT_public.isChecked -> {viewModel.getPublicData(userInput)}
                 }
         }
 

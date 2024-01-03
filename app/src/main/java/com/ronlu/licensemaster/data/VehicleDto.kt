@@ -72,5 +72,29 @@ sealed class VehicleDto {
 
     ) : VehicleDto()
 
+    data class PublicD(
+        @SerializedName("mispar_rechev")
+        val plateNumber: Int,
 
+        @SerializedName("tzeva_rechev")
+        val color: String? = null,
+
+        @SerializedName("shnat_yitzur")
+        val year: Int? = null,
+
+        @SerializedName("sug_rechev_EU_cd")
+        val euLevel: String? = null,
+
+        @SerializedName("sug_rechev_nm")
+        val vehicleType: String? = null,
+
+        @SerializedName("tozeret_nm")
+        val manufacture: String? = null,
+
+        @SerializedName("mispar_mekomot")
+        val numberOfSeats: String? = null,
+
+        @SerializedName("mishkal_kolel")
+        val weight: Int? = null
+    ) :VehicleDto()
 }

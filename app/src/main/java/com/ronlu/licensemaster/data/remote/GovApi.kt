@@ -20,4 +20,10 @@ interface GovApi {
         @Query("resource_id") resourceId: String,
         @Query("filters") filters: String,
     ): Response<CarResponse<VehicleDto.MotorcycleD>>
+
+    @GET("datastore_search")
+    suspend fun getPublicData(
+        @Query("resource_id") resourceId: String,
+        @Query("filters") filters: String,
+    ): Response<CarResponse<VehicleDto.PublicD>>
 }

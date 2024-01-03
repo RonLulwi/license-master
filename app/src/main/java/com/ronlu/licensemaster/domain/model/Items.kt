@@ -35,4 +35,17 @@ sealed class Items {
         val rearTire: String
     ) : Items()
 
+    @Entity(tableName = "publicVehicle")
+    data class PublicVehicle(
+        @PrimaryKey(autoGenerate = false)
+        val plateNumber: Int,
+        val color: String,
+        val year: Int,
+        val euLevel: String,
+        val vehicleType: String,
+        val manufacture: String,
+        val numberOfSeats: String,
+        val weight: Int
+    ) : Items()
+
 }

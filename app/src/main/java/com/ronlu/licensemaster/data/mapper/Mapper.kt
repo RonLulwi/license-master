@@ -7,7 +7,7 @@ fun VehicleDto.CarD.toCar() : Items.Car {
     return Items.Car(
         plateNumber = plateNumber,
         color = color ?: "UnKnown",
-        year = year ?: 0,
+        year = year ?: -1,
         title = title ?: "UnKnown",
         isPrivate = isPrivate ?: "UnKnown",
         manufacture = manufacture ?: "UnKnown",
@@ -20,7 +20,7 @@ fun VehicleDto.MotorcycleD.toMotorcycle() : Items.Motorcycle {
     return Items.Motorcycle(
         plateNumber = plateNumber,
         color = color ?: "UnKnown",
-        year = year ?: 0,
+        year = year ?: -1,
         title = title ?: "UnKnown",
         isPrivate = isPrivate ?: "UnKnown",
         manufacture = manufacture ?: "UnKnown",
@@ -28,5 +28,20 @@ fun VehicleDto.MotorcycleD.toMotorcycle() : Items.Motorcycle {
         fuelType = fuelType ?: "UnKnown",
         frontTire = frontTire ?: "UnKnown",
         rearTire = rearTire ?: "UnKnown"
+    )
+}
+
+fun VehicleDto.PublicD.toPublic() : Items.PublicVehicle {
+    return Items.PublicVehicle(
+        plateNumber = plateNumber,
+        color = color ?: "UnKnown",
+        year = year ?: -1,
+        euLevel = euLevel ?: "UnKnown",
+        vehicleType = vehicleType ?: "UnKnown",
+        manufacture = manufacture ?: "UnKnown",
+        numberOfSeats = numberOfSeats ?: "UnKnown",
+        weight = weight ?: -1
+
+
     )
 }

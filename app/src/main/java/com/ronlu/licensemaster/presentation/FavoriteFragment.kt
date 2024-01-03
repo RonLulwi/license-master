@@ -28,9 +28,9 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
             masterAdapter.differ.submitList(it)
         })
 
-        masterAdapter.itemClickListener = {view, item, position ->
+        masterAdapter.itemClickListener = { mView, item, _ ->
             viewModel.deleteItem(item)
-            Snackbar.make(view, "Car has ben Deleted!", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(mView, "Car has ben Deleted!", Snackbar.LENGTH_SHORT).show()
         }
 
     }

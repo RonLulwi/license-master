@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.ronlu.licensemaster.databinding.RecyclerviewCarItemBinding
 import com.ronlu.licensemaster.databinding.RecyclerviewMotorcycleItemBinding
+import com.ronlu.licensemaster.databinding.RecyclerviewPublicItemBinding
 import com.ronlu.licensemaster.domain.model.Items
 
 sealed class MasterViewHolder(binding: ViewBinding) :  RecyclerView.ViewHolder(binding.root){
@@ -39,12 +40,25 @@ sealed class MasterViewHolder(binding: ViewBinding) :  RecyclerView.ViewHolder(b
             binding.recyclerViewLBLPlateNumber.text = motorcycle.plateNumber.toString()
             binding.recyclerViewLBLRearTire.text = motorcycle.rearTire
             binding.recyclerViewLBLFrontTire.text = motorcycle.frontTire
-            //binding.recyclerViewFABSave TODO(floating button )
             binding.recyclerViewFABSave.setOnClickListener { view ->
                 itemClickListener?.let { it(view, motorcycle, adapterPosition) }
             }
         }
     }
 
-
+    class PublicViewHolder(private val binding: RecyclerviewPublicItemBinding) : MasterViewHolder(binding){
+        fun bind(publicVehicle : Items.PublicVehicle){
+                binding.recyclerViewLBLPlateNumber.text = publicVehicle.plateNumber.toString()
+                binding.recyclerViewLBLColor.text = publicVehicle.color
+                binding.recyclerViewLBLManufacture.text = publicVehicle.manufacture
+                binding.recyclerViewLBLEu.text = publicVehicle.euLevel
+                binding.recyclerViewLBLNumberOfSeats.text = publicVehicle.numberOfSeats
+                binding.recyclerViewLBLVehicleType.text = publicVehicle.vehicleType
+                binding.recyclerViewLBLWeight.text = publicVehicle.weight.toString()
+                binding.recyclerViewLBLYear.text = publicVehicle.year.toString()
+                binding.recyclerViewFABSave.setOnClickListener { view ->
+                    itemClickListener?.let { it(view, publicVehicle, adapterPosition) }
+                }
+        }
+    }
 }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ronlu.licensemaster.R
 import com.ronlu.licensemaster.databinding.RecyclerviewCarItemBinding
 import com.ronlu.licensemaster.databinding.RecyclerviewMotorcycleItemBinding
+import com.ronlu.licensemaster.databinding.RecyclerviewPublicItemBinding
 import com.ronlu.licensemaster.domain.model.Items
 
 class MasterAdapter : RecyclerView.Adapter<MasterViewHolder>() {
@@ -29,6 +30,13 @@ class MasterAdapter : RecyclerView.Adapter<MasterViewHolder>() {
                     false
                 )
             )
+            R.layout.recyclerview_public_item -> MasterViewHolder.PublicViewHolder(
+                RecyclerviewPublicItemBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+            )
             else -> throw IllegalArgumentException()
         }
     }
@@ -38,6 +46,7 @@ class MasterAdapter : RecyclerView.Adapter<MasterViewHolder>() {
         when(holder){
             is MasterViewHolder.CarViewHolder -> holder.bind(differ.currentList[position] as Items.Car)
             is MasterViewHolder.MotorcycleViewHolder -> holder.bind(differ.currentList[position] as Items.Motorcycle)
+            is MasterViewHolder.PublicViewHolder -> holder.bind(differ.currentList[position] as Items.PublicVehicle)
         }
     }
 
@@ -49,6 +58,7 @@ class MasterAdapter : RecyclerView.Adapter<MasterViewHolder>() {
         return when(differ.currentList[position]){
             is Items.Car -> R.layout.recyclerview_car_item
             is Items.Motorcycle -> R.layout.recyclerview_motorcycle_item
+            is Items.PublicVehicle -> R.layout.recyclerview_public_item
         }
     }
 
@@ -57,6 +67,7 @@ class MasterAdapter : RecyclerView.Adapter<MasterViewHolder>() {
             return when{
                 oldItem is Items.Car && newItem is Items.Car -> newItem.plateNumber == oldItem.plateNumber
                 oldItem is Items.Motorcycle && newItem is Items.Motorcycle -> newItem.plateNumber == oldItem.plateNumber
+                oldItem is Items.PublicVehicle && newItem is Items.PublicVehicle -> newItem.plateNumber == oldItem.plateNumber
                 else -> false
             }
         }
