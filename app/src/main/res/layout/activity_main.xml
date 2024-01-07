@@ -1,48 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:background="#4B714C"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/main_LBL_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="License Master"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginVertical="15dp"/>
+        android:textAlignment="center"/>
+
 
     <FrameLayout
         android:id="@+id/main_fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/main_LBL_title"
-        android:layout_above="@id/main_buttons"
-        android:layout_marginHorizontal="15dp"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="15dp"
+        app:layout_constraintBottom_toTopOf="@id/main_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_LBL_title" />
 
     <LinearLayout
         android:id="@+id/main_buttons"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="15dp"
+        android:paddingVertical="10dp"
         android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true">
+        android:gravity="center_horizontal">
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/main_BTN_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_search"/>
+            app:icon="@drawable/ic_search"
+            android:backgroundTint="#B4D3B5"
+            android:layout_marginEnd="5dp"/>
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/main_BTN_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_heart"/>
+            app:icon="@drawable/ic_heart"
+            android:backgroundTint="#B4D3B5"
+            android:layout_marginStart="5dp"/>
 
     </LinearLayout>
 
-</RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

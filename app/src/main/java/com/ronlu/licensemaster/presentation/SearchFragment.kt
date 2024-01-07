@@ -3,6 +3,7 @@ package com.ronlu.licensemaster.presentation
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatRadioButton
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.ronlu.licensemaster.MainActivity
 import com.ronlu.licensemaster.R
@@ -42,7 +44,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             viewModel.saveItem(item)
         }
 
-        val fragmentSearch_BTN_search = view.findViewById<AppCompatButton>(R.id.fragmentSearch_BTN_search)
+        val fragmentSearch_BTN_search = view.findViewById<MaterialButton>(R.id.fragmentSearch_BTN_search)
         val search_RBT_motorcycle = view.findViewById<AppCompatRadioButton>(R.id.search_RBT_motorcycle)
         val search_RBT_car = view.findViewById<AppCompatRadioButton>(R.id.search_RBT_car)
         val search_RBT_public = view.findViewById<AppCompatRadioButton>(R.id.search_RBT_public)
@@ -60,6 +62,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                     search_RBT_motorcycle.isChecked -> viewModel.getMotorcycleData(userInput)
                     search_RBT_car.isChecked -> { viewModel.getCarData(userInput) }
                     search_RBT_public.isChecked -> {viewModel.getPublicData(userInput)}
+                    else -> Toast.makeText(view.context, "Choose an vehicle type", Toast.LENGTH_SHORT).show()
                 }
         }
 

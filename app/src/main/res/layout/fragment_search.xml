@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4B714C"
     tools:context=".presentation.SearchFragment">
 
     <LinearLayout
@@ -22,6 +23,7 @@
                 android:layout_weight="1"
                 android:textSize="15sp"
                 android:text="Plate Number:"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:gravity="center_vertical"/>
 
@@ -30,40 +32,49 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:inputType="numberDecimal"
                 android:textStyle="bold"/>
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragmentSearch_BTN_search"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:text="SEARCH"
+                android:textColor="@color/black"
+                android:backgroundTint="#B4D3B5"
                 android:textStyle="bold"/>
 
         </LinearLayout>
 
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/search_RBT_car"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:buttonTintMode="@color/black"
                 android:text="car"/>
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/search_RBT_motorcycle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:buttonTintMode="@color/black"
                 android:text="motorcycle" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
                 android:id="@+id/search_RBT_public"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTintMode="@color/black"
+                android:textColor="@color/black"
                 android:text="public" />
 
 

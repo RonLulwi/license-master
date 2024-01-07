@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="10dp"
     app:cardCornerRadius="20dp"
+    android:backgroundTint="#365937"
     android:layout_marginVertical="20dp">
 
     <LinearLayout
@@ -32,6 +33,7 @@
                     android:layout_weight="2"
                     android:text="Plate Number:"
                     android:gravity="center_vertical"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
@@ -39,6 +41,7 @@
                     android:id="@+id/recyclerView_LBL_plateNumber"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:textColor="@color/black"
                     android:layout_weight="3"
                     android:paddingEnd="10dp"
                     android:textAlignment="viewEnd"
@@ -59,6 +62,7 @@
                     android:layout_weight="2"
                     android:text="Color:"
                     android:gravity="center_vertical"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
@@ -66,6 +70,7 @@
                     android:id="@+id/recyclerView_LBL_color"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:textColor="@color/black"
                     android:layout_weight="3"
                     android:paddingEnd="10dp"
                     android:textAlignment="viewEnd"
@@ -85,6 +90,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity="center_vertical"
+                    android:textColor="@color/black"
                     android:text="Year:"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
@@ -93,6 +99,7 @@
                     android:id="@+id/recyclerView_LBL_year"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:textColor="@color/black"
                     android:layout_weight="3"
                     android:paddingEnd="10dp"
                     android:textAlignment="viewEnd"
@@ -113,6 +120,7 @@
                     android:layout_weight="2"
                     android:text="Title:"
                     android:gravity="center_vertical"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
@@ -120,6 +128,7 @@
                     android:id="@+id/recyclerView_LBL_title"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:textColor="@color/black"
                     android:layout_weight="3"
                     android:paddingEnd="10dp"
                     android:textAlignment="viewEnd"
@@ -140,6 +149,7 @@
                     android:layout_weight="2"
                     android:gravity="center_vertical"
                     android:text="Is Private:"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
@@ -149,6 +159,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:paddingEnd="10dp"
+                    android:textColor="@color/black"
                     android:textAlignment="viewEnd"
                     android:textSize="19sp"/>
 
@@ -167,6 +178,7 @@
                     android:layout_weight="2"
                     android:text="Manufacture:"
                     android:gravity="center_vertical"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
@@ -175,6 +187,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:textColor="@color/black"
                     android:paddingEnd="10dp"
                     android:textAlignment="viewEnd"
                     android:textSize="19sp"/>
@@ -194,6 +207,7 @@
                     android:layout_weight="2"
                     android:text="Finish Level:"
                     android:gravity="center_vertical"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
 
@@ -202,6 +216,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:textColor="@color/black"
                     android:paddingEnd="10dp"
                     android:textAlignment="viewEnd"
                     android:textSize="19sp"/>
@@ -220,6 +235,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:text="Fuel Type:"
+                    android:textColor="@color/black"
                     android:gravity="center_vertical"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
@@ -229,6 +245,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:textColor="@color/black"
                     android:paddingEnd="10dp"
                     android:textAlignment="viewEnd"
                     android:textSize="19sp"/>
@@ -242,6 +259,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
+            android:backgroundTint="#B4D3B5"
             android:src="@drawable/ic_heart_border"
             android:layout_gravity="center_vertical"/>
 
